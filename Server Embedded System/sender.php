@@ -70,12 +70,56 @@
 			</div>
 
 		</aside>
-        <div>
-        <h1> Live Video Streaming </h1> 
-            <img src="{{ url_for('video_feed') }}"> 
-        </div>
 
-		
+		<div id="fh5co-main">
+
+			
+
+			<div class="fh5co-narrow-content animate-box fh5co-border-bottom" data-animate-effect="fadeInLeft">
+				<h2 class="fh5co-heading" >Control the camera</span></h2>
+            
+				<p><p></p></p>
+
+				<div class="row">
+                    
+                    
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+</script>
+<button>Switch On</button>
+<submit>Switch Off<submit>
+<script>
+$("button").click(function(){
+    $.get("receiver.php/?kill=0", function(data, status){
+    });
+});
+
+$("submit").click(function(){
+    $.get("receiver.php/?kill=1", function(data, status){
+    });
+});
+</script>
+                    
+                    
+                    
+					
+                    
+                    
+                    
+                    
+					
+				
+    
+    
+                </div>
+
+			</div>
+
+
+			
+
+		</div>
+	</div>
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -98,4 +142,9 @@
 
 	</body>
 </html>
+
+
+
+
+
 
