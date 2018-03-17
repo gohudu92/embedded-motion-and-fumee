@@ -25,6 +25,9 @@ app = Flask(__name__)
   def imageslog():
       return render_template('ImagesLog.html')
 
+@app.route('/Control')
+  def control():
+        return render_template('control.php')
 
 
   if __name__ == '__main__':
