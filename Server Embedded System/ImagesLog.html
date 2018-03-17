@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 	</head>
 	<body>
@@ -82,27 +83,25 @@
                     
                     
 					<script type="text/javascript">
-                    function readMultipleFiles(evt) {
-                    //Retrieve all the files from the FileList object
-                    var files = evt.target.files; 
-
-                    if (files) {
-                    for (var i=0, f; f=files[i]; i++) {
-                    var r = new FileReader();
-                    r.onload = (function(f) {
-                    return function(e) {
-                    var contents = e.target.result;
-                    };
-                    })(f);
-
-                    r.readAsText(f);
-                    }   
-                    } else {
-                    alert("Failed to load files"); 
-                    }
-                    }
-
-                    document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
+                    var dir = "images/";
+                        
+                    var fileextension = ".jpg";
+                    var files;
+                    $.ajax({
+                        //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+                            url: dir,
+                            success: function (data) {
+                            //files = JSON.parse(data);
+                            //List all .png file names in the page
+                            console.log();
+                            $(data).find("a:contains(" + fileextension + ")").each(function () {
+                            
+                            var filename = this.href.replace(window.location.host, "").replace("http://", "");
+                            console.log(filename);
+                            $("body").append("<img src='" + dir + filename + "'>");
+                            });
+                            }
+                            });
                     </script>
                     
                     
