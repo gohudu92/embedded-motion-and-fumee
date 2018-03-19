@@ -53,10 +53,10 @@
 			<h1 id="fh5co-logo"><a href="index.html"><img src="images/logo-colored.png" ></a></h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="video.html">Videos</a></li>
-					<li><a href="sender.html">Control</a></li>
-					<li><a href="ImagesLog.html">Images</a></li>
+					<li><a href="index">Home</a></li>
+					<li><a href="video">Videos</a></li>
+					<li><a href="Control">Control</a></li>
+					<li><a href="Imageslog">Images</a></li>
 				</ul>
 			</nav>
 
@@ -70,12 +70,56 @@
 			</div>
 
 		</aside>
-        <div>
-        <h1> Live Video Streaming </h1> 
-            <img src="{{ url_for('video_feed') }}"> 
-        </div>
 
-		
+		<div id="fh5co-main">
+
+			
+
+			<div class="fh5co-narrow-content animate-box fh5co-border-bottom" data-animate-effect="fadeInLeft">
+				<h2 class="fh5co-heading" >Database of pictures taken</span></h2>
+            <a href="./images/">Click here to view images</a>
+				<p><p></p></p>
+
+				<div class="row">
+                    
+                    
+					<script type="text/javascript">
+                    var dir = "images/";
+                        
+                    var fileextension = ".jpg";
+                    var files;
+                    $.ajax({
+                        //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+                            url: dir,
+                            success: function (data) {
+                            //files = JSON.parse(data);
+                            //List all .png file names in the page
+                            console.log();
+                            $(data).find("a:contains(" + fileextension + ")").each(function () {
+                            
+                            var filename = this.href.replace(window.location.host, "").replace("http://", "");
+                            console.log(filename);
+                            $("body").append("<img src='" + dir + filename + "'>");
+                            });
+                            }
+                            });
+                    </script>
+                    
+                    
+                    
+                    
+					
+                    
+                    
+                
+    
+                </div>
+
+			</div>
+
+
+		</div>
+	</div>
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
