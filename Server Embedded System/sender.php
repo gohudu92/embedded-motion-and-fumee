@@ -55,7 +55,7 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="video.html">Videos</a></li>
-					<li><a href="sender.php">Control</a></li>
+					<li><a href="sender.html">ON/OFF</a></li>
 					<li><a href="ImagesLog.html">Images</a></li>
 				</ul>
 			</nav>
