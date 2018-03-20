@@ -1,13 +1,15 @@
 # embedded-motion-and-fumee
 
-## send_mail.py
-To execute this file, you have to write in your command prompt (or Terminal) :
+## Installation guide:
 ```sh
-python send_mail.py [subjectOfTheMail] [bodyOfTheMail]
+❯pip3 install opencv-python
+❯pip3 install flask
 ```
+## How to run the server 
+```sh
+❯cd /your/path/to/PenelopeSecureCam
+❯python3 Server\ Setup.py
+```
+Then go to http://0.0.0.0:5000/
 
-## reco.py
-To execute this file, you need opencv 3.3.0 install and just run the file :
-```sh
-python3 reco.py
-```
+Click and enjoy !
